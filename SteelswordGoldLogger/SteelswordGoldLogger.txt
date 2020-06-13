@@ -1,7 +1,7 @@
 ## APIVersion: 100031
 ## Title: Steelsword Gold Logger
-## Version: 1.0
-## AddOnVersion: 1
+## Version: 1.0.1
+## AddOnVersion: 2
 ## Author: FAR747
 ## Description: Simple addon for accounting for gold on a character.
 ## SavedVariables: SteelswordGoldLoggervars

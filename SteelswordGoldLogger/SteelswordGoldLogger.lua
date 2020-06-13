@@ -1,6 +1,6 @@
 SteelswordGoldLogger = {
     name            = "SteelswordGoldLogger",           -- Matches folder and Manifest file names.
-    version         = "1.0",                -- A nuisance to match to the Manifest.
+    version         = "1.0.1",                -- A nuisance to match to the Manifest.
     author          = "FAR747",
     color           = "DDFFEE",             -- Used in menu titles and so on.
     menuName        = "Steelsword Gold Logger",          -- A UNIQUE identifier for menu object.
@@ -8,7 +8,7 @@ SteelswordGoldLogger = {
     classes         = {},
 }
 
-local SIGoldReasons = {0,1,2,3,4,5,8,11,13,19,28,29,31,32,33,42,43,47,51,52,56,57,60,62,63,64}
+local SIGoldReasons = {0,1,2,3,4,5,8,11,13,19,21,27,28,29,31,32,33,42,43,44,45,47,51,52,55,56,57,60,61,62,63,64}
 
 SteelswordGoldLogger.addonGUI = {
     MainWindow = SteelswordGoldLoggerMainWindow,
