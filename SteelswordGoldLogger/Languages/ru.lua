@@ -8,6 +8,7 @@ local localization_strings = {
     SI_SGL_MW_LASTUPDTIME = "Последнее обновление: %s", -- Последнее обновление
     SI_SGL_MW_SWITCH_TLOG = "Лог",
     SI_SGL_MW_SWITCH_DAYS = "Дни",
+    SI_SGL_MW_BUTTON_BANK = "Банк",
     -- Settings
     SI_SGL_SETTINGS_CATEGORY_GENERAL = "GENERAL",
     SI_SGL_SETTINGS_CATEGORY_LIMITS = "Лимиты транзакций",
@@ -53,6 +54,9 @@ local localization_strings = {
     -- Keybindings.
     SI_BINDING_NAME_SteelswordGoldLogger_DISPLAY = "Display Steelsword Gold Logger",
     
+    --Warning Messages
+    SI_SGL_WARNINGMESSAGE_BANKUPD = "Внесите/Снимите золото из банка для обновления",
+
     -- DEBUG
     SI_SGL_DEBUG_MESSAGE = "Активны DEBUG сообщения аддона Steelsword Gold Logger. Выключить вы их можете в настройках аддона.", -- Активны DEBUG сообщения аддона Steelsword Gold Logger. Выключить вы их можете в настройках аддона.
     SI_SGL_DEBUG_MESSAGE_GREETING = "Steelsword Gold Logger v%s by FAR747", 
