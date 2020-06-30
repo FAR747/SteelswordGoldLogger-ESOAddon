@@ -4,6 +4,13 @@ function SteelswordGoldLogger.BankMoneyUpdateEventHandler(eventCode, newMoney, o
 end
 
 function SteelswordGoldLogger.BankLogUPD(newMoney, oldMoney)
+    local curdate = GetDateStringFromTimestamp(GetTimeStamp())
+    local isnewday = false
+    if SteelswordGoldLogger.savedAccinfo.banklog.lastdatestr ~= curdate then
+    isnewday = true
+    --SteelswordGoldLogger.savedAccinfo.banklog.lastdatestr = curdate
+    SteelswordGoldLogger.savedAccinfo.banklog.LastDayGold = SteelswordGoldLogger.savedAccinfo.banklog.Gold
+    end
     SteelswordGoldLogger.Goldvars.Bank = newMoney
     SteelswordGoldLogger.Goldvars.BankDay = newMoney - SteelswordGoldLogger.savedAccinfo.banklog.LastDayGold
     SteelswordGoldLogger.savedAccinfo.banklog.Gold = newMoney
@@ -143,7 +150,7 @@ function SteelswordGoldLogger.BankListLogUPD()
         SteelswordGoldLogger.Temps.bank.curdatecreate = true
         SteelswordGoldLogger.savedAccinfo.banklog.lastdatestr = GetDateStringFromTimestamp(GetTimeStamp())
         SteelswordGoldLogger.savedAccinfo.banklog.DayGold = 0
-        SteelswordGoldLogger.savedAccinfo.banklog.LastDayGold = SteelswordGoldLogger.savedAccinfo.banklog.Gold
+        --SteelswordGoldLogger.savedAccinfo.banklog.LastDayGold = SteelswordGoldLogger.savedAccinfo.banklog.Gold
         SteelswordGoldLogger.Goldvars.BankDay = 0
     end
     SteelswordGoldLogger.Banklogssav()
