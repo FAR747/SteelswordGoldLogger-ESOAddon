@@ -8,6 +8,7 @@ local localization_strings = {
     SI_SGL_MW_LASTUPDTIME = "Last update: %s", -- Последнее обновление
     SI_SGL_MW_SWITCH_TLOG = "Logs",
     SI_SGL_MW_SWITCH_DAYS = "Days",
+    SI_SGL_MW_BUTTON_BANK = "Bank",
     -- Settings
     SI_SGL_SETTINGS_CATEGORY_GENERAL = "GENERAL",
     SI_SGL_SETTINGS_CATEGORY_LIMITS = "Transaction Limits",

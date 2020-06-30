@@ -15,15 +15,23 @@ SteelswordGoldLogger.addonGUI = {
     curload = {},
     transactions = {},
     days = {},
+    bank = {},
 }
 SteelswordGoldLogger.Temps = {
     lasttransaction = {},
     istransactionlogstart = false,
+    --button
     isdaylogsinlist = false,
+    isbanklogsinlist = false,
+    --
     lasttransaction_time = 0,
     isfirstdayinit = false,
     curdatecreate = false,
     curisnewday = false,
+    --bank
+    bank = {
+        curdatecreate = false,
+    },
 }
 SteelswordGoldLogger.Currectuser = {
     userid = "nil",
@@ -35,6 +43,8 @@ SteelswordGoldLogger.Goldvars = {
     SessionStart = 0,
     Session = 0,
     Day = 0,
+    Bank = 0,
+    BankDay = 0,
 }
 -- Default settings.
 SteelswordGoldLogger.defaultVars = {
@@ -104,10 +114,22 @@ SteelswordGoldLogger.savedVars = {
         yesterdaysgold = -1,
     }
 }
+
+SteelswordGoldLogger.savedAccinfo = {
+    addonversion = SteelswordGoldLogger.version,
+    banklog = {
+        lastdate = 0,
+        lastdatestr = "00.00.00",
+        Gold = 0,
+        DayGold = 0,
+        LastDayGold = 0,
+        log = {},}
+}
 --Vars
 --SGM_SlashCommand = "/goldlogger";
 local SGM_SavedVars = "SteelswordGoldLoggervars"
 local SGL_SavedLogs = "SteelswordGoldLoggerLOGS"
+local SGL_SavedAccInfo = "SteelswordGoldLoggerAccvars"
 local SGM_Windowstage = false
 -- Wraps text with a color.
 function SteelswordGoldLogger.Colorize(text, color)
@@ -270,6 +292,7 @@ function SteelswordGoldLogger.Activated(e)
     SteelswordGoldLogger.Windowinit()
     SteelswordGoldLogger.lastdayinit()
     SteelswordGoldLogger.daysloginit()
+    SteelswordGoldLogger.Bankloginit()
     if SteelswordGoldLogger.savedVars.greetingmes then
     d(string.format(GetString(SI_SGL_DEBUG_MESSAGE_GREETING),SteelswordGoldLogger.version))
     end
@@ -291,16 +314,18 @@ function SteelswordGoldLogger.OnAddOnLoaded(event, addonName)
     -- Load saved variables.
     SteelswordGoldLogger.characterSavedVars = ZO_SavedVars:NewCharacterIdSettings(SGM_SavedVars, 1, nil, SteelswordGoldLogger.savedVars)
     SteelswordGoldLogger.accountSavedVars = ZO_SavedVars:NewAccountWide(SGM_SavedVars, 1, nil, SteelswordGoldLogger.savedVars)
+    SteelswordGoldLogger.AccSavedVarsLoad = ZO_SavedVars:NewAccountWide(SGL_SavedAccInfo, 1, nil, SteelswordGoldLogger.savedAccinfo)
 
     if not SteelswordGoldLogger.characterSavedVars.accountWide then
         SteelswordGoldLogger.savedVars = SteelswordGoldLogger.characterSavedVars
     else
         SteelswordGoldLogger.savedVars = SteelswordGoldLogger.accountSavedVars
     end
-
+    SteelswordGoldLogger.savedAccinfo = SteelswordGoldLogger.AccSavedVarsLoad
     -- When player is ready, after everything has been loaded.
     EVENT_MANAGER:RegisterForEvent(SteelswordGoldLogger.name, EVENT_PLAYER_ACTIVATED, SteelswordGoldLogger.Activated)
     EVENT_MANAGER:RegisterForEvent(SteelswordGoldLogger.name, EVENT_MONEY_UPDATE, SteelswordGoldLogger.MoneyUpdateEventHandler)
+    EVENT_MANAGER:RegisterForEvent(SteelswordGoldLogger.name, EVENT_BANKED_MONEY_UPDATE, SteelswordGoldLogger.BankMoneyUpdateEventHandler)
     SteelswordGoldLogger.LoadSettings()
    SteelswordGoldLogger.addonGUI.MainWindow = SteelswordGoldLoggerMainWindow
 end

@@ -58,6 +58,10 @@
                             <Anchor point="TOPLEFT" relativeTo="$(parent)" offsetX="0" offsetY="0" />
                             <Anchor point="BOTTOMRIGHT" relativeTo="$(parent)" relativePoint="BOTTOMRIGHT" offsetX="0" offsetY="0" />
                         </Control>
+                        <Control name="$(parent)SGLItemBankListDay" inherits="ZO_ScrollList" hidden="true">
+                            <Anchor point="TOPLEFT" relativeTo="$(parent)" offsetX="0" offsetY="0" />
+                            <Anchor point="BOTTOMRIGHT" relativeTo="$(parent)" relativePoint="BOTTOMRIGHT" offsetX="0" offsetY="0" />
+                        </Control>
                     </Controls>
                 </Control>
                 
@@ -83,6 +87,18 @@
                     </Controls>
                     <OnClicked>
                         SteelswordGoldLogger.Switchlistonwindow()
+                    </OnClicked>
+                </Button>
+                <Button name="$(parent)ButtonBankSwitchlist" mouseEnabled="true" inherits="ZO_DefaultButton" hidden="false">
+                    <Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)DetailPanel" offsetX="0" offsetY="40" />
+                    <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)DetailPanel" offsetX="15" offsetY="60" />
+                    <Controls>
+                        <Label name="$(parent)ButtonBankSwitchlistLabel" font="$(ANTIQUE_FONT)|14|soft-shadow-thick" color="CFDCBD" horizontalAlignment="CENTER" verticalAlignment="CENTER" text="SI_SGL_MW_BUTTON_BANK">
+                            <AnchorFill />
+                        </Label>
+                    </Controls>
+                    <OnClicked>
+                        SteelswordGoldLogger.SwitchtoBankList()
                     </OnClicked>
                 </Button>
         </Controls>
