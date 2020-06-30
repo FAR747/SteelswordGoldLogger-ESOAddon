@@ -101,6 +101,10 @@
                         SteelswordGoldLogger.SwitchtoBankList()
                     </OnClicked>
                 </Button>
+                <Label name="$(parent)WarningMessage" font="$(ANTIQUE_FONT)|14|soft-shadow-thick" text="nil" hidden="true">
+                    <Anchor point="BOTTOMRIGHT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="0" offsetY="0" />
+                    <Anchor point="BOTTOMRIGHT" relativeTo="$(parent)" relativePoint="BOTTOMRIGHT" offsetX="0" offsetY="0" />
+                </Label>
         </Controls>
     
 </TopLevelControl>

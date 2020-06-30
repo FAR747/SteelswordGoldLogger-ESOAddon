@@ -9,6 +9,9 @@ function SteelswordGoldLogger.BankLogUPD(newMoney, oldMoney)
     SteelswordGoldLogger.savedAccinfo.banklog.Gold = newMoney
     SteelswordGoldLogger.savedAccinfo.banklog.DayGold = SteelswordGoldLogger.Goldvars.BankDay
     SteelswordGoldLogger.BankListLogUPD()
+
+    SteelswordGoldLogger.Temps.bank.isfirstsesstionbankupd = true
+    SteelswordGoldLogger.MW_WarningMessageUPD(true, "nil")
 end
 
 function SteelswordGoldLogger.Bankloginit(isnewday)
@@ -144,4 +147,9 @@ function SteelswordGoldLogger.BankListLogUPD()
         SteelswordGoldLogger.Goldvars.BankDay = 0
     end
     SteelswordGoldLogger.Banklogssav()
+end
+
+function SteelswordGoldLogger.WARNINGMESSAGE_SetBankUPDMessage()
+    local text = "|cf11100"..GetString(SI_SGL_WARNINGMESSAGE_BANKUPD).."|r"
+    SteelswordGoldLogger.MW_WarningMessageUPD(false, text)
 end

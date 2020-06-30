@@ -31,6 +31,7 @@ SteelswordGoldLogger.Temps = {
     --bank
     bank = {
         curdatecreate = false,
+        isfirstsesstionbankupd = false,
     },
 }
 SteelswordGoldLogger.Currectuser = {

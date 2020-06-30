@@ -89,6 +89,7 @@ function SGL.Switchlistonwindow()
     
     if SteelswordGoldLogger.Temps.isbanklogsinlist then
         buttonBank:SetHidden(false)
+        SGL.MW_WarningMessageUPD(true,"nil")
     end
 end
 
@@ -106,4 +107,13 @@ function SGL.SwitchtoBankList()
     buttonBank:SetHidden(true)
     SteelswordGoldLogger.Temps.isdaylogsinlist = true
     SteelswordGoldLogger.Temps.isbanklogsinlist = true
+    if not SGL.Temps.bank.isfirstsesstionbankupd then
+    SGL.WARNINGMESSAGE_SetBankUPDMessage()
+    end
+end
+
+function SGL.MW_WarningMessageUPD(hidden, message)
+    local warningmessageLabel = window:GetNamedChild("WarningMessage")
+    warningmessageLabel:SetHidden(hidden)
+    warningmessageLabel:SetText(message)
 end

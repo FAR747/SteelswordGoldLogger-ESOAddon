@@ -53,6 +53,9 @@ local localization_strings = {
     
     -- Keybindings.
     SI_BINDING_NAME_SteelswordGoldLogger_DISPLAY = "Display Steelsword Gold Logger",
+
+    --Warning Messages
+    SI_SGL_WARNINGMESSAGE_BANKUPD = "Deposit/withdraw of gold to the bank for update",
     
     -- DEBUG
     SI_SGL_DEBUG_MESSAGE = "Active DEBUG messages addon Steelsword Gold Logger. You can turn them off in the addon settings.", -- Активны DEBUG сообщения аддона Steelsword Gold Logger. Выключить вы их можете в настройках аддона.
