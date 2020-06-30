@@ -30,6 +30,9 @@ local localization_strings = {
 
     SI_SGL_SETTINGS_OPTIONS_HIDECURGOLD = "Скрыть текущее золото",
     SI_SGL_SETTINGS_OPTIONS_HIDECURGOLD_TP = "Скрывает текущее золото в главном окне аддона",
+
+    SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON = "Скрыть кнопку банка",
+    SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON_TP = "Скрыть кнопку банка из окна аддона.\nПримечание: Активируйте эту опцию если не используете статистику золота по дням в банке.\nУчтите, что статистика банка по дням всё равно будет работать!",
     
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS = "Сохранять транзакции",
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_TP = "Нестабильно! \nСохраняет лог ваших транзакций после перезагрузки.", --Сохраняет лог ваших транзакций после перезагрузки.

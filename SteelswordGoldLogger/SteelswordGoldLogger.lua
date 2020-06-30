@@ -64,6 +64,7 @@ SteelswordGoldLogger.defaultVars = {
     stacktransactions_timecheck = false,
     stacktransactions_time = 5,
     stacktransactions_isnewonly = true,
+    hidebankbutton = false,
     -- Saved logs
     logs_transactions = {
         charid = 0,
@@ -94,6 +95,7 @@ SteelswordGoldLogger.savedVars = {
     stacktransactions_timecheck = false,
     stacktransactions_time = 5,
     stacktransactions_isnewonly = true,
+    hidebankbutton = false,
     --DEBUG
     greetingmes = true,
     debugmes = false,

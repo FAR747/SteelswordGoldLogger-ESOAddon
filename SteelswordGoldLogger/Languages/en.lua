@@ -30,6 +30,9 @@ local localization_strings = {
 
     SI_SGL_SETTINGS_OPTIONS_HIDECURGOLD = "Hide Current Gold",
     SI_SGL_SETTINGS_OPTIONS_HIDECURGOLD_TP = "Hides the amount of gold from the addon window.",
+
+    SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON = "Hide Bank Button",
+    SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON_TP = "Hide the bank button from the addon window.\nNote: Activate this option if you do not use statistics by the day at the bank.\nKeep in mind that bank statistics by day will still work!",
     
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS = "Save Transactions",
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_TP = "Unstable! \nSaves a log of your transactions after reboot.", --Сохраняет лог ваших транзакций после перезагрузки.

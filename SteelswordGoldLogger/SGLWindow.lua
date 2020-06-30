@@ -32,6 +32,9 @@ function SGL.UPDWindowEv()
     local str0 = date.." "..time
     local str = strf(GetString(SI_SGL_MW_LASTUPDTIME), str0)
     window:GetNamedChild("LastUPDTime"):SetText(str)
+
+    local buttonBank = window:GetNamedChild("ButtonBankSwitchlist")
+    buttonBank:SetHidden(SGL.savedVars.hidebankbutton)
 end
 function SGL.setcurrectgold(gold)
     local goldstr = ZO_CurrencyControl_FormatCurrencyAndAppendIcon(gold, false, CURT_MONEY, false)
@@ -89,6 +92,7 @@ function SGL.Switchlistonwindow()
     
     if SteelswordGoldLogger.Temps.isbanklogsinlist then
         buttonBank:SetHidden(false)
+        SGL.UPDWindowEv()
         SGL.MW_WarningMessageUPD(true,"nil")
     end
 end

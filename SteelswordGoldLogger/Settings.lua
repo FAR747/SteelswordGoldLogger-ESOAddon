@@ -40,7 +40,19 @@ function SteelswordGoldLogger.LoadSettings()
                     width = "full",	--or "half" (optional)
                     --warning = "Will need to reload the UI.",	--(optional)
                 },
-                [3] = {
+                [3] = { -- Hide Bank Button
+                    type = "checkbox",
+                    name = GetString(SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON),
+                    tooltip = GetString(SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON_TP),
+                    getFunc = function() return SteelswordGoldLogger.savedVars.hidebankbutton end,
+                    setFunc = function(value) SteelswordGoldLogger.savedVars.hidebankbutton = value
+                    SteelswordGoldLogger.UPDWindowEv()
+                    end,
+                    default = SteelswordGoldLogger.defaultVars.hidebankbutton,
+                    width = "full",	--or "half" (optional)
+                    --warning = "Will need to reload the UI.",	--(optional)
+                },
+                [4] = {
                     type = "checkbox",
                     name = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS),
                     tooltip = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_TP),
@@ -53,7 +65,7 @@ function SteelswordGoldLogger.LoadSettings()
                     warning = GetString(SI_SGL_SETTINGS_WARNING_UNSTABLE),	--(optional)
                     --disabled = function() return true end
                 },
-                [4] = {
+                [5] = {
                     type = "slider",
                     name = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_SLIDERNAME),
                     tooltip = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_SLIDERNAME_TP),
