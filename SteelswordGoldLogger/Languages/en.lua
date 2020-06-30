@@ -72,6 +72,7 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_13 = "Looted from enemies",
     SI_SGL_GUPD_REASON_19 = "Wayshrine travel",
     SI_SGL_GUPD_REASON_21 = "Battlegrounds",
+    SI_SGL_GUPD_REASON_24 = "Outfit Station",
     SI_SGL_GUPD_REASON_27 = "Level Reward",
     SI_SGL_GUPD_REASON_28 = "Mount upgrade",
     SI_SGL_GUPD_REASON_29 = "Items repair",

@@ -72,6 +72,7 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_13 = "Добыто из моба",
     SI_SGL_GUPD_REASON_19 = "Быстрое перемещение",
     SI_SGL_GUPD_REASON_21 = "Поля сражений",
+    SI_SGL_GUPD_REASON_24 = "Мастерская нарядов",
     SI_SGL_GUPD_REASON_27 = "Награда за уровень",
     SI_SGL_GUPD_REASON_28 = "Улучшение маунта",
     SI_SGL_GUPD_REASON_29 = "Починка предметов",
