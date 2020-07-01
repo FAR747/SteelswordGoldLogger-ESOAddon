@@ -148,6 +148,7 @@ function SteelswordGoldLogger.showUserGUI()
     SteelswordGoldLogger.senddebugmes("showUserGUI run")
     SteelswordGoldLogger.updgold()
     SteelswordGoldLogger.addonGUI.MainWindow:SetHidden(false)
+    SteelswordGoldLogger.MW_OpenWindowUPD()
     SGM_Windowstage = true;
 end
 

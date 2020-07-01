@@ -142,7 +142,7 @@ function SteelswordGoldLogger.BankListLogUPD()
             name = ZO_CurrencyControl_FormatCurrencyAndAppendIcon(SteelswordGoldLogger.Goldvars.Bank, false, CURT_MONEY, false),
             date = curdate,
             udate = GetTimeStamp(),
-            price = 0,
+            price = SteelswordGoldLogger.Goldvars.BankDay,
         }
         local data = SGLogDetail:New(TransactionData)
         scrollData[#scrollData+1] = ZO_ScrollList_CreateDataEntry(1, data)
