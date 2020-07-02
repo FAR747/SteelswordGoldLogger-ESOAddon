@@ -101,6 +101,10 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_62 = "Добыто из воровского тайника",
     SI_SGL_GUPD_REASON_63 = "Продажа краденого", --Продажа краденого
     SI_SGL_GUPD_REASON_64 = "Выкуп у торговца", --Выкуп у торговца
+
+
+    --Other
+    SI_SGL_INFO_WEBSITE = "https://steelsword.ru/",
 }
 
 for stringId, stringValue in pairs(localization_strings) do

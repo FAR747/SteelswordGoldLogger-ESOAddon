@@ -101,6 +101,9 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_62 = "Looted from thieves chest",
     SI_SGL_GUPD_REASON_63 = "Sale of stolen", --Продажа краденого
     SI_SGL_GUPD_REASON_64 = "Buyout in Merchant", --Выкуп у торговца
+
+    --Other
+    SI_SGL_INFO_WEBSITE = "https://www.esoui.com/downloads/info2668-SteelswordGoldLogger.html",
 }
 
 for stringId, stringValue in pairs(localization_strings) do

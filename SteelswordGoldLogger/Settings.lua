@@ -7,7 +7,10 @@ function SteelswordGoldLogger.LoadSettings()
         displayName = SteelswordGoldLogger.menuName,
         author = SteelswordGoldLogger.author,
         version = SteelswordGoldLogger.version,
-        website = SteelswordGoldLogger.website,
+        website = GetString(SI_SGL_INFO_WEBSITE),
+        feedback = "https://www.esoui.com/downloads/info2668-SteelswordGoldLogger.html#comments",
+        translation = "https://github.com/FAR747/SteelswordGoldLogger-ESOAddon/tree/master/SteelswordGoldLogger/Languages",
+        donation = "https://www.esoui.com/downloads/info2668-SteelswordGoldLogger.html#donate",
         --slashCommand = "/myaddon",	--(optional) will register a keybind to open to this panel
         registerForRefresh = true,	--boolean (optional) (will refresh all options controls when a setting is changed and when the panel is shown)
         registerForDefaults = true,	--boolean (optional) (will set all options controls back to default values)
