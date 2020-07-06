@@ -7,9 +7,11 @@ local strf = string.format
 function SGL.Windowinit()
     window:GetNamedChild("UserName"):SetText(SGL.Currectuser.charName..SGL.Currectuser.userid) --
     SGL.addonGUI.transactions = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemList")
-    SGL.addonGUI.days = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemListDay")
+    SGL.addonGUI.days = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemListDay") -- day list 
+    SGL.addonGUI.bank = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemBankListDay") -- bank list
     ZO_ScrollList_AddDataType(SGL.addonGUI.transactions,1,"SteelswordGoldLoggerLOGITEM",30, function(control,data) SGL.UPDListData(control,data) end)
     ZO_ScrollList_AddDataType(SGL.addonGUI.days,1,"SteelswordGoldLoggerLOGITEM",30, function(control,data) SGL.UPDListData(control,data) end)
+    ZO_ScrollList_AddDataType(SGL.addonGUI.bank,1,"SteelswordGoldLoggerLOGITEM",30, function(control,data) SGL.UPDListData(control,data) end)
     SGL.UPDWindowEv()
 end
 function SGL.UPDListData(control,data)
@@ -30,6 +32,9 @@ function SGL.UPDWindowEv()
     local str0 = date.." "..time
     local str = strf(GetString(SI_SGL_MW_LASTUPDTIME), str0)
     window:GetNamedChild("LastUPDTime"):SetText(str)
+
+    local buttonBank = window:GetNamedChild("ButtonBankSwitchlist")
+    buttonBank:SetHidden(SGL.savedVars.hidebankbutton)
 end
 function SGL.setcurrectgold(gold)
     local goldstr = ZO_CurrencyControl_FormatCurrencyAndAppendIcon(gold, false, CURT_MONEY, false)
@@ -64,8 +69,10 @@ end
 
 function SGL.Switchlistonwindow()
     local buttonlabel = window:GetNamedChild("ButtonSwitchlist"):GetNamedChild("ButtonSwitchlistLabel")
+    local buttonBank = window:GetNamedChild("ButtonBankSwitchlist")
     local tpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemList")
     local dpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemListDay")--DetailPanelDays
+    local bpanel =  window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemBankListDay") -- bank list
     --buttonlabel:SetText("OK!")
     if SteelswordGoldLogger.Temps.isdaylogsinlist then
         -- load T logs
@@ -73,12 +80,52 @@ function SGL.Switchlistonwindow()
         buttonlabel:SetText(GetString(SI_SGL_MW_SWITCH_DAYS))
         tpanel:SetHidden(false)
         dpanel:SetHidden(true)
-        
+        bpanel:SetHidden(true)
     else
         -- load D logs
         SteelswordGoldLogger.Temps.isdaylogsinlist = true
         buttonlabel:SetText(GetString(SI_SGL_MW_SWITCH_TLOG))
         tpanel:SetHidden(true)
         dpanel:SetHidden(false)
+        bpanel:SetHidden(true)
+    end
+    
+    if SteelswordGoldLogger.Temps.isbanklogsinlist then
+        buttonBank:SetHidden(false)
+        SteelswordGoldLogger.Temps.isbanklogsinlist = false
+        SGL.UPDWindowEv()
+        SGL.MW_WarningMessageUPD(true,"nil")
+    end
+end
+
+function SGL.SwitchtoBankList()
+    local buttonlabel = window:GetNamedChild("ButtonSwitchlist"):GetNamedChild("ButtonSwitchlistLabel")
+    local buttonBank = window:GetNamedChild("ButtonBankSwitchlist")
+    local tpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemList")
+    local dpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemListDay")--DetailPanelDays
+    local bpanel =  window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemBankListDay") -- bank list
+    
+    buttonlabel:SetText(GetString(SI_SGL_MW_SWITCH_TLOG))
+    tpanel:SetHidden(true)
+    dpanel:SetHidden(true)
+    bpanel:SetHidden(false)
+    buttonBank:SetHidden(true)
+    SteelswordGoldLogger.Temps.isdaylogsinlist = true
+    SteelswordGoldLogger.Temps.isbanklogsinlist = true
+    if not SGL.Temps.bank.isfirstsesstionbankupd then
+    SGL.WARNINGMESSAGE_SetBankUPDMessage()
+    end
+end
+
+function SGL.MW_WarningMessageUPD(hidden, message)
+    local warningmessageLabel = window:GetNamedChild("WarningMessage")
+    warningmessageLabel:SetHidden(hidden)
+    warningmessageLabel:SetText(message)
+end
+
+function SGL.MW_OpenWindowUPD()
+    local buttonBank = window:GetNamedChild("ButtonBankSwitchlist")
+    if SteelswordGoldLogger.Temps.isbanklogsinlist then
+        buttonBank:SetHidden(true)
     end
 end

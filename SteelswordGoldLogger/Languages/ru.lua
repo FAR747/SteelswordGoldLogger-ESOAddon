@@ -8,6 +8,7 @@ local localization_strings = {
     SI_SGL_MW_LASTUPDTIME = "Последнее обновление: %s", -- Последнее обновление
     SI_SGL_MW_SWITCH_TLOG = "Лог",
     SI_SGL_MW_SWITCH_DAYS = "Дни",
+    SI_SGL_MW_BUTTON_BANK = "Банк",
     -- Settings
     SI_SGL_SETTINGS_CATEGORY_GENERAL = "GENERAL",
     SI_SGL_SETTINGS_CATEGORY_LIMITS = "Лимиты транзакций",
@@ -29,6 +30,9 @@ local localization_strings = {
 
     SI_SGL_SETTINGS_OPTIONS_HIDECURGOLD = "Скрыть текущее золото",
     SI_SGL_SETTINGS_OPTIONS_HIDECURGOLD_TP = "Скрывает текущее золото в главном окне аддона",
+
+    SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON = "Скрыть кнопку банка",
+    SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON_TP = "Скрыть кнопку банка из окна аддона.\nПримечание: Активируйте эту опцию если не используете статистику золота по дням в банке.\nУчтите, что статистика банка по дням всё равно будет работать!",
     
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS = "Сохранять транзакции",
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_TP = "Нестабильно! \nСохраняет лог ваших транзакций после перезагрузки.", --Сохраняет лог ваших транзакций после перезагрузки.
@@ -53,6 +57,9 @@ local localization_strings = {
     -- Keybindings.
     SI_BINDING_NAME_SteelswordGoldLogger_DISPLAY = "Display Steelsword Gold Logger",
     
+    --Warning Messages
+    SI_SGL_WARNINGMESSAGE_BANKUPD = "Внесите/Снимите золото из банка для обновления",
+
     -- DEBUG
     SI_SGL_DEBUG_MESSAGE = "Активны DEBUG сообщения аддона Steelsword Gold Logger. Выключить вы их можете в настройках аддона.", -- Активны DEBUG сообщения аддона Steelsword Gold Logger. Выключить вы их можете в настройках аддона.
     SI_SGL_DEBUG_MESSAGE_GREETING = "Steelsword Gold Logger v%s by FAR747", 
@@ -72,6 +79,7 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_13 = "Добыто из моба",
     SI_SGL_GUPD_REASON_19 = "Быстрое перемещение",
     SI_SGL_GUPD_REASON_21 = "Поля сражений",
+    SI_SGL_GUPD_REASON_24 = "Мастерская нарядов",
     SI_SGL_GUPD_REASON_27 = "Награда за уровень",
     SI_SGL_GUPD_REASON_28 = "Улучшение маунта",
     SI_SGL_GUPD_REASON_29 = "Починка предметов",
@@ -93,6 +101,10 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_62 = "Добыто из воровского тайника",
     SI_SGL_GUPD_REASON_63 = "Продажа краденого", --Продажа краденого
     SI_SGL_GUPD_REASON_64 = "Выкуп у торговца", --Выкуп у торговца
+
+
+    --Other
+    SI_SGL_INFO_WEBSITE = "https://steelsword.ru/",
 }
 
 for stringId, stringValue in pairs(localization_strings) do

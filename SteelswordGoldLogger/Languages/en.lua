@@ -8,6 +8,7 @@ local localization_strings = {
     SI_SGL_MW_LASTUPDTIME = "Last update: %s", -- Последнее обновление
     SI_SGL_MW_SWITCH_TLOG = "Logs",
     SI_SGL_MW_SWITCH_DAYS = "Days",
+    SI_SGL_MW_BUTTON_BANK = "Bank",
     -- Settings
     SI_SGL_SETTINGS_CATEGORY_GENERAL = "GENERAL",
     SI_SGL_SETTINGS_CATEGORY_LIMITS = "Transaction Limits",
@@ -29,6 +30,9 @@ local localization_strings = {
 
     SI_SGL_SETTINGS_OPTIONS_HIDECURGOLD = "Hide Current Gold",
     SI_SGL_SETTINGS_OPTIONS_HIDECURGOLD_TP = "Hides the amount of gold from the addon window.",
+
+    SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON = "Hide Bank Button",
+    SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON_TP = "Hide the bank button from the addon window.\nNote: Activate this option if you do not use statistics by the day at the bank.\nKeep in mind that bank statistics by day will still work!",
     
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS = "Save Transactions",
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_TP = "Unstable! \nSaves a log of your transactions after reboot.", --Сохраняет лог ваших транзакций после перезагрузки.
@@ -52,6 +56,9 @@ local localization_strings = {
     
     -- Keybindings.
     SI_BINDING_NAME_SteelswordGoldLogger_DISPLAY = "Display Steelsword Gold Logger",
+
+    --Warning Messages
+    SI_SGL_WARNINGMESSAGE_BANKUPD = "Deposit/withdraw of gold to the bank for update",
     
     -- DEBUG
     SI_SGL_DEBUG_MESSAGE = "Active DEBUG messages addon Steelsword Gold Logger. You can turn them off in the addon settings.", -- Активны DEBUG сообщения аддона Steelsword Gold Logger. Выключить вы их можете в настройках аддона.
@@ -72,6 +79,7 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_13 = "Looted from enemies",
     SI_SGL_GUPD_REASON_19 = "Wayshrine travel",
     SI_SGL_GUPD_REASON_21 = "Battlegrounds",
+    SI_SGL_GUPD_REASON_24 = "Outfit Station",
     SI_SGL_GUPD_REASON_27 = "Level Reward",
     SI_SGL_GUPD_REASON_28 = "Mount upgrade",
     SI_SGL_GUPD_REASON_29 = "Items repair",
@@ -93,6 +101,9 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_62 = "Looted from thieves chest",
     SI_SGL_GUPD_REASON_63 = "Sale of stolen", --Продажа краденого
     SI_SGL_GUPD_REASON_64 = "Buyout in Merchant", --Выкуп у торговца
+
+    --Other
+    SI_SGL_INFO_WEBSITE = "https://www.esoui.com/downloads/info2668-SteelswordGoldLogger.html",
 }
 
 for stringId, stringValue in pairs(localization_strings) do
