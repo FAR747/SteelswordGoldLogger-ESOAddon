@@ -75,6 +75,7 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_4 = "Quest reward",
     SI_SGL_GUPD_REASON_5 = "Paid NPC",
     SI_SGL_GUPD_REASON_8 = "Upgrade backpack",
+    SI_SGL_GUPD_REASON_9 = "Upgrade Bank",
     SI_SGL_GUPD_REASON_11 = "Looted from excavation",
     SI_SGL_GUPD_REASON_13 = "Looted from enemies",
     SI_SGL_GUPD_REASON_19 = "Wayshrine travel",

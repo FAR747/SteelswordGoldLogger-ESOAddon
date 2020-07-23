@@ -75,6 +75,7 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_4 = "Награда за квест",
     SI_SGL_GUPD_REASON_5 = "Оплата NPC",
     SI_SGL_GUPD_REASON_8 = "Улучшение инвентаря",
+    SI_SGL_GUPD_REASON_9 = "Улучшение банка",
     SI_SGL_GUPD_REASON_11 = "Раскопки",
     SI_SGL_GUPD_REASON_13 = "Добыто из моба",
     SI_SGL_GUPD_REASON_19 = "Быстрое перемещение",
