@@ -42,7 +42,7 @@ function SteelswordGoldLogger.LoadSettings()
                     default = SteelswordGoldLogger.defaultVars.hidecurrectgold,
                     width = "full",	--or "half" (optional)
                     --warning = "Will need to reload the UI.",	--(optional)
-                },
+                },--[[
                 [3] = { -- Hide Bank Button
                     type = "checkbox",
                     name = GetString(SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON),
@@ -54,8 +54,8 @@ function SteelswordGoldLogger.LoadSettings()
                     default = SteelswordGoldLogger.defaultVars.hidebankbutton,
                     width = "full",	--or "half" (optional)
                     --warning = "Will need to reload the UI.",	--(optional)
-                },
-                [4] = {
+                },--]]
+                [3] = {
                     type = "checkbox",
                     name = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS),
                     tooltip = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_TP),
@@ -68,7 +68,7 @@ function SteelswordGoldLogger.LoadSettings()
                     warning = GetString(SI_SGL_SETTINGS_WARNING_UNSTABLE),	--(optional)
                     --disabled = function() return true end
                 },
-                [5] = {
+                [4] = {
                     type = "slider",
                     name = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_SLIDERNAME),
                     tooltip = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_SLIDERNAME_TP),
@@ -217,6 +217,7 @@ function SteelswordGoldLogger.LoadSettings()
                     width = "full",	--or "half" (optional)
                     --warning = "Will need to reload the UI.",	--(optional)
                 },
+                --[[
                 [4] = {
                     type = "checkbox",
                     name = GetString(SI_SGL_SETTINGS_CATEGORY_DEBUG_LEGACY_OLDBUTTONS),
@@ -227,7 +228,7 @@ function SteelswordGoldLogger.LoadSettings()
                     --disabled = function() return not SteelswordGoldLogger.savedVars.debugmes end,
                     width = "full",	--or "half" (optional)
                     warning = GetString(SI_SGL_SETTINGS_WARNING_UNSTABLE),	--(optional)
-                },
+                },--]]
                 
             },
         },

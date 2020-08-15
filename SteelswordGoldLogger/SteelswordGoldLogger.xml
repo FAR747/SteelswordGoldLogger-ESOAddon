@@ -110,7 +110,7 @@
 					<Textures normal="/esoui/art/tradinghouse/tradinghouse_listings_tabicon_up.dds"
 						pressed="/esoui/art/tradinghouse/tradinghouse_listings_tabicon_down.dds"
 						mouseOver="/esoui/art/tradinghouse/tradinghouse_listings_tabicon_over.dds"
-						disabled="/esoui/art/tradinghouse/tradinghouse_listings_tabicon_disabled.dds"/>
+						disabled="/esoui/art/tradinghouse/tradinghouse_listings_tabicon_down.dds"/> <!--/esoui/art/tradinghouse/tradinghouse_listings_tabicon_disabled.dds-->
 					<OnClicked>
 						SteelswordGoldLogger.GUIButtonsClick(0)
 					</OnClicked>
@@ -125,7 +125,7 @@
 					<Textures normal="/esoui/art/market/keyboard/tabicon_daily_up.dds"
 						pressed="/esoui/art/market/keyboard/tabicon_daily_down.dds"
 						mouseOver="/esoui/art/market/keyboard/tabicon_daily_over.dds"
-						disabled="/esoui/art/market/keyboard/tabicon_daily_disabled.dds"/>
+						disabled="/esoui/art/market/keyboard/tabicon_daily_down.dds"/>
 					<OnClicked>
 						SteelswordGoldLogger.GUIButtonsClick(1)
 					</OnClicked>
@@ -140,7 +140,7 @@
 					<Textures normal="\esoui\art\guild\guildhistory_indexicon_guildbank_up.dds"
 						pressed="\esoui\art\guild\guildhistory_indexicon_guildbank_down.dds"
 						mouseOver="\esoui\art\guild\guildhistory_indexicon_guildbank_over.dds"
-						disabled="\esoui\art\guild\guildhistory_indexicon_guildbank_over.dds"/>
+						disabled="\esoui\art\guild\guildhistory_indexicon_guildbank_down.dds"/>
 					<OnClicked>
 						SteelswordGoldLogger.GUIButtonsClick(2)
 					</OnClicked>
