@@ -53,7 +53,9 @@ local localization_strings = {
     SI_SGL_SETTINGS_CATEGORY_DEBUG_GREETING_TP = "Should I send a message about the successful upload of the addon to chat?", -- Отправлять ли сообщение об успешной загрузки аддона в чат?
     SI_SGL_SETTINGS_CATEGORY_DEBUG_AOGUI = "Opening the addon window at startup", -- Открытие окна аддона при запуске
     SI_SGL_SETTINGS_CATEGORY_DEBUG_AOGUI_TP = "Automatically opens the addon window when loading the interface", -- Автоматически открывает окно аддона при загрузке интерфейса
-    
+    --Legacy
+    SI_SGL_SETTINGS_CATEGORY_DEBUG_LEGACY_OLDBUTTONS = "Old type of navigation", --Старый вид навигации
+    SI_SGL_SETTINGS_CATEGORY_DEBUG_LEGACY_OLDBUTTONS_TP = "Enable the old type of button display (Not stable!)\n\nWill need to reload the UI!", --Включить старый вид отображения кнопок (Не стабильно!)\nТребуется перезагрузка интерфейса!
     -- Keybindings.
     SI_BINDING_NAME_SteelswordGoldLogger_DISPLAY = "Display Steelsword Gold Logger",
 

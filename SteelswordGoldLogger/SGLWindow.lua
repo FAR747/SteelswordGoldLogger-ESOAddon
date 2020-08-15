@@ -70,6 +70,7 @@ end
 function SGL.Switchlistonwindow()
     local buttonlabel = window:GetNamedChild("ButtonSwitchlist"):GetNamedChild("ButtonSwitchlistLabel")
     local buttonBank = window:GetNamedChild("ButtonBankSwitchlist")
+    local buttonList = window:GetNamedChild("ButtonSwitchlist")
     local tpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemList")
     local dpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemListDay")--DetailPanelDays
     local bpanel =  window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemBankListDay") -- bank list
@@ -128,4 +129,39 @@ function SGL.MW_OpenWindowUPD()
     if SteelswordGoldLogger.Temps.isbanklogsinlist then
         buttonBank:SetHidden(true)
     end
+    if not SGL.savedVars.legacybuttons then
+    SGL.LeagcyInit()
+    end
+end
+
+function SGL.LeagcyInit()
+    local buttonBank = window:GetNamedChild("ButtonBankSwitchlist")
+    local buttonList = window:GetNamedChild("ButtonSwitchlist")
+
+    local hidden = not SGL.savedVars.legacybuttons
+    buttonBank:SetHidden(hidden)
+    buttonList:SetHidden(hidden)
+end
+
+function SGL.ToolTipsInit()
+    local buttonTransactions = window:GetNamedChild("ButtonTransactions")
+    local ButtonDays = window:GetNamedChild("ButtonDays")
+    local ButtonBankDays = window:GetNamedChild("ButtonBankDays")
+    buttonTransactions:SetHandler('OnMouseEnter', function(self) ZO_Tooltips_ShowTextTooltip(self, TOP, GetString(SI_SGL_MW_SWITCH_TLOG)) end)
+    ButtonDays:SetHandler('OnMouseEnter', function(self) ZO_Tooltips_ShowTextTooltip(self, TOP, GetString(SI_SGL_MW_SWITCH_DAYS)) end)
+    ButtonBankDays:SetHandler('OnMouseEnter', function(self) ZO_Tooltips_ShowTextTooltip(self, TOP, GetString(SI_SGL_MW_BUTTON_BANK)) end)
+end
+
+function SGL.GUIButtonsClick(buttonid) -- 0-transactions, 1-days, 2-bankdays 
+    local buttonTransactions = window:GetNamedChild("ButtonTransactions")
+    local ButtonDays = window:GetNamedChild("ButtonDays")
+    local ButtonBankDays = window:GetNamedChild("ButtonBankDays")
+
+    local tpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemList") -- Transactions
+    local dpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemListDay")--DetailPanelDays
+    local bpanel =  window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemBankListDay") -- bank list
+
+    SGL.senddebugmes("Click ID "..buttonid)
+
+
 end

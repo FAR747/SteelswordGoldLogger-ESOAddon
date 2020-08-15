@@ -1,6 +1,6 @@
 SteelswordGoldLogger = {
     name            = "SteelswordGoldLogger",           -- Matches folder and Manifest file names.
-    version         = "1.1.1",                -- A nuisance to match to the Manifest.
+    version         = "1.2",                -- A nuisance to match to the Manifest.
     author          = "FAR747",
     color           = "DDFFEE",             -- Used in menu titles and so on.
     menuName        = "Steelsword Gold Logger",          -- A UNIQUE identifier for menu object.
@@ -65,6 +65,7 @@ SteelswordGoldLogger.defaultVars = {
     stacktransactions_time = 5,
     stacktransactions_isnewonly = true,
     hidebankbutton = false,
+    legacybuttons = false,
     -- Saved logs
     logs_transactions = {
         charid = 0,
@@ -96,6 +97,7 @@ SteelswordGoldLogger.savedVars = {
     stacktransactions_time = 5,
     stacktransactions_isnewonly = true,
     hidebankbutton = false,
+    legacybuttons = false,
     --DEBUG
     greetingmes = true,
     debugmes = false,
@@ -332,6 +334,8 @@ function SteelswordGoldLogger.OnAddOnLoaded(event, addonName)
     EVENT_MANAGER:RegisterForEvent(SteelswordGoldLogger.name, EVENT_BANKED_MONEY_UPDATE, SteelswordGoldLogger.BankMoneyUpdateEventHandler)
     SteelswordGoldLogger.LoadSettings()
    SteelswordGoldLogger.addonGUI.MainWindow = SteelswordGoldLoggerMainWindow
+   SteelswordGoldLogger.LeagcyInit()
+   SteelswordGoldLogger.ToolTipsInit()
 end
 -- When any addon is loaded, but before UI (Chat) is loaded.
 EVENT_MANAGER:RegisterForEvent(SteelswordGoldLogger.name, EVENT_ADD_ON_LOADED, SteelswordGoldLogger.OnAddOnLoaded)
