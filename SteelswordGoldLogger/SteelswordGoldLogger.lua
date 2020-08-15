@@ -66,6 +66,7 @@ SteelswordGoldLogger.defaultVars = {
     stacktransactions_isnewonly = true,
     hidebankbutton = false,
     legacybuttons = false,
+    autoopeninbank = false,
     -- Saved logs
     logs_transactions = {
         charid = 0,
@@ -98,6 +99,7 @@ SteelswordGoldLogger.savedVars = {
     stacktransactions_isnewonly = true,
     hidebankbutton = false,
     legacybuttons = false,
+    autoopeninbank = false,
     --DEBUG
     greetingmes = true,
     debugmes = false,
@@ -332,6 +334,9 @@ function SteelswordGoldLogger.OnAddOnLoaded(event, addonName)
     EVENT_MANAGER:RegisterForEvent(SteelswordGoldLogger.name, EVENT_PLAYER_ACTIVATED, SteelswordGoldLogger.Activated)
     EVENT_MANAGER:RegisterForEvent(SteelswordGoldLogger.name, EVENT_MONEY_UPDATE, SteelswordGoldLogger.MoneyUpdateEventHandler)
     EVENT_MANAGER:RegisterForEvent(SteelswordGoldLogger.name, EVENT_BANKED_MONEY_UPDATE, SteelswordGoldLogger.BankMoneyUpdateEventHandler)
+    --Open/Close BANK
+    EVENT_MANAGER:RegisterForEvent(SteelswordGoldLogger.name, EVENT_OPEN_BANK, SteelswordGoldLogger.OpenBankEventHandler)
+    EVENT_MANAGER:RegisterForEvent(SteelswordGoldLogger.name, EVENT_CLOSE_BANK, SteelswordGoldLogger.CloseBankEventHandler)
     SteelswordGoldLogger.LoadSettings()
    SteelswordGoldLogger.addonGUI.MainWindow = SteelswordGoldLoggerMainWindow
    SteelswordGoldLogger.LeagcyInit()
@@ -607,4 +612,18 @@ function SteelswordGoldLogger.daylogssav()
             SteelswordGoldLogger.savedVars.logs_days.lastdate = GetTimeStamp()
             local setlogs = SteelswordGoldLogger.savedVars.logs_days.log
             SteelswordGoldLogger.savedVars.logs_days.log = setdata
+end
+
+
+function SteelswordGoldLogger.OpenBankEventHandler(eventCode, bankBag)
+    if bankBag == BAG_BANK and SteelswordGoldLogger.savedVars.autoopeninbank then
+        SteelswordGoldLogger.showUserGUI()
+        SteelswordGoldLogger.GUIButtonsClick(2)
+    end
+end
+
+function SteelswordGoldLogger.CloseBankEventHandler(eventCode, bankBag)
+    if SteelswordGoldLogger.savedVars.autoopeninbank then
+        SteelswordGoldLogger.hideUserGUI()
+    end
 end

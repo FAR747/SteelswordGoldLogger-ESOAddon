@@ -34,6 +34,9 @@ local localization_strings = {
     SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON = "Hide Bank Button",
     SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON_TP = "Hide the bank button from the addon window.\nNote: Activate this option if you do not use statistics by the day at the bank.\nKeep in mind that bank statistics by day will still work!",
     
+    SI_SGL_SETTINGS_OPTIONS_AUTOOPENINBANK = "Automatically open the addon window in the bank", -- Автоматически открывать окно аддона в банке
+    SI_SGL_SETTINGS_OPTIONS_AUTOOPENINBANK_TP = "Automatically opens a window in the bank on the bank statistics page by day.", -- Автоматически открывает окно в банке на странице статистики банка по дням.
+
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS = "Save Transactions",
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_TP = "Unstable! \nSaves a log of your transactions after reboot.", --Сохраняет лог ваших транзакций после перезагрузки.
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_SLIDERNAME = "Save Recent Transactions", --Сохранить последних транзакций

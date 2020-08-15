@@ -57,6 +57,18 @@ function SteelswordGoldLogger.LoadSettings()
                 },--]]
                 [3] = {
                     type = "checkbox",
+                    name = GetString(SI_SGL_SETTINGS_OPTIONS_AUTOOPENINBANK),
+                    tooltip = GetString(SI_SGL_SETTINGS_OPTIONS_AUTOOPENINBANK_TP),
+                    getFunc = function() return SteelswordGoldLogger.savedVars.autoopeninbank end,
+                    setFunc = function(value) SteelswordGoldLogger.savedVars.autoopeninbank = value
+                    end,
+                    default = SteelswordGoldLogger.defaultVars.autoopeninbank,
+                    width = "full",	--or "half" (optional)
+                    --warning = GetString(SI_SGL_SETTINGS_WARNING_UNSTABLE),	--(optional)
+                    --disabled = function() return true end
+                },
+                [4] = {
+                    type = "checkbox",
                     name = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS),
                     tooltip = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_TP),
                     getFunc = function() return SteelswordGoldLogger.savedVars.savetransactions end,
@@ -68,7 +80,7 @@ function SteelswordGoldLogger.LoadSettings()
                     warning = GetString(SI_SGL_SETTINGS_WARNING_UNSTABLE),	--(optional)
                     --disabled = function() return true end
                 },
-                [4] = {
+                [5] = {
                     type = "slider",
                     name = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_SLIDERNAME),
                     tooltip = GetString(SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_SLIDERNAME_TP),
