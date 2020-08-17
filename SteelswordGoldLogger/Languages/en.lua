@@ -34,6 +34,9 @@ local localization_strings = {
     SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON = "Hide Bank Button",
     SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON_TP = "Hide the bank button from the addon window.\nNote: Activate this option if you do not use statistics by the day at the bank.\nKeep in mind that bank statistics by day will still work!",
     
+    SI_SGL_SETTINGS_OPTIONS_AUTOOPENINBANK = "Automatically open the addon window in the bank", -- Автоматически открывать окно аддона в банке
+    SI_SGL_SETTINGS_OPTIONS_AUTOOPENINBANK_TP = "Automatically opens a window in the bank on the bank statistics page by day.", -- Автоматически открывает окно в банке на странице статистики банка по дням.
+
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS = "Save Transactions",
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_TP = "Unstable! \nSaves a log of your transactions after reboot.", --Сохраняет лог ваших транзакций после перезагрузки.
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_SLIDERNAME = "Save Recent Transactions", --Сохранить последних транзакций
@@ -53,7 +56,9 @@ local localization_strings = {
     SI_SGL_SETTINGS_CATEGORY_DEBUG_GREETING_TP = "Should I send a message about the successful upload of the addon to chat?", -- Отправлять ли сообщение об успешной загрузки аддона в чат?
     SI_SGL_SETTINGS_CATEGORY_DEBUG_AOGUI = "Opening the addon window at startup", -- Открытие окна аддона при запуске
     SI_SGL_SETTINGS_CATEGORY_DEBUG_AOGUI_TP = "Automatically opens the addon window when loading the interface", -- Автоматически открывает окно аддона при загрузке интерфейса
-    
+    --Legacy
+    SI_SGL_SETTINGS_CATEGORY_DEBUG_LEGACY_OLDBUTTONS = "Old type of navigation", --Старый вид навигации
+    SI_SGL_SETTINGS_CATEGORY_DEBUG_LEGACY_OLDBUTTONS_TP = "Enable the old type of button display (Not stable!)\n\nWill need to reload the UI!", --Включить старый вид отображения кнопок (Не стабильно!)\nТребуется перезагрузка интерфейса!
     -- Keybindings.
     SI_BINDING_NAME_SteelswordGoldLogger_DISPLAY = "Display Steelsword Gold Logger",
 

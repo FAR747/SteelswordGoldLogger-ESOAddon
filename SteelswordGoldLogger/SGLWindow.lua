@@ -13,6 +13,7 @@ function SGL.Windowinit()
     ZO_ScrollList_AddDataType(SGL.addonGUI.days,1,"SteelswordGoldLoggerLOGITEM",30, function(control,data) SGL.UPDListData(control,data) end)
     ZO_ScrollList_AddDataType(SGL.addonGUI.bank,1,"SteelswordGoldLoggerLOGITEM",30, function(control,data) SGL.UPDListData(control,data) end)
     SGL.UPDWindowEv()
+    SGL.GUIButtonsClick(0) -- Set Transaction List
 end
 function SGL.UPDListData(control,data)
     control:GetNamedChild("NameLabel"):SetText(data.name)
@@ -33,8 +34,10 @@ function SGL.UPDWindowEv()
     local str = strf(GetString(SI_SGL_MW_LASTUPDTIME), str0)
     window:GetNamedChild("LastUPDTime"):SetText(str)
 
+    if SGL.savedVars.legacybuttons then
     local buttonBank = window:GetNamedChild("ButtonBankSwitchlist")
     buttonBank:SetHidden(SGL.savedVars.hidebankbutton)
+    end
 end
 function SGL.setcurrectgold(gold)
     local goldstr = ZO_CurrencyControl_FormatCurrencyAndAppendIcon(gold, false, CURT_MONEY, false)
@@ -70,6 +73,7 @@ end
 function SGL.Switchlistonwindow()
     local buttonlabel = window:GetNamedChild("ButtonSwitchlist"):GetNamedChild("ButtonSwitchlistLabel")
     local buttonBank = window:GetNamedChild("ButtonBankSwitchlist")
+    local buttonList = window:GetNamedChild("ButtonSwitchlist")
     local tpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemList")
     local dpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemListDay")--DetailPanelDays
     local bpanel =  window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemBankListDay") -- bank list
@@ -128,4 +132,64 @@ function SGL.MW_OpenWindowUPD()
     if SteelswordGoldLogger.Temps.isbanklogsinlist then
         buttonBank:SetHidden(true)
     end
+    if not SGL.savedVars.legacybuttons then
+    SGL.LeagcyInit()
+    end
+end
+
+function SGL.LeagcyInit()
+    local buttonBank = window:GetNamedChild("ButtonBankSwitchlist")
+    local buttonList = window:GetNamedChild("ButtonSwitchlist")
+
+    local hidden = not SGL.savedVars.legacybuttons
+    buttonBank:SetHidden(hidden)
+    buttonList:SetHidden(hidden)
+end
+
+function SGL.ToolTipsInit()
+    local buttonTransactions = window:GetNamedChild("ButtonTransactions")
+    local ButtonDays = window:GetNamedChild("ButtonDays")
+    local ButtonBankDays = window:GetNamedChild("ButtonBankDays")
+    buttonTransactions:SetHandler('OnMouseEnter', function(self) ZO_Tooltips_ShowTextTooltip(self, TOP, GetString(SI_SGL_MW_SWITCH_TLOG)) end)
+    ButtonDays:SetHandler('OnMouseEnter', function(self) ZO_Tooltips_ShowTextTooltip(self, TOP, GetString(SI_SGL_MW_SWITCH_DAYS)) end)
+    ButtonBankDays:SetHandler('OnMouseEnter', function(self) ZO_Tooltips_ShowTextTooltip(self, TOP, GetString(SI_SGL_MW_BUTTON_BANK)) end)
+end
+
+function SGL.GUIButtonsClick(buttonid) -- 0-transactions, 1-days, 2-bankdays 
+    local buttonTransactions = window:GetNamedChild("ButtonTransactions")
+    local ButtonDays = window:GetNamedChild("ButtonDays")
+    local ButtonBankDays = window:GetNamedChild("ButtonBankDays")
+
+    local tpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemList") -- Transactions
+    local dpanel = window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemListDay")--DetailPanelDays
+    local bpanel =  window:GetNamedChild("DetailPanel"):GetNamedChild("SGLItemBankListDay") -- bank list
+
+    SGL.senddebugmes("Click ID "..buttonid)
+
+    buttonTransactions:SetEnabled(true)
+    ButtonDays:SetEnabled(true)
+    ButtonBankDays:SetEnabled(true)
+
+    tpanel:SetHidden(true)
+    dpanel:SetHidden(true)
+    bpanel:SetHidden(true)
+
+    SGL.MW_WarningMessageUPD(true,"nil")
+    if buttonid == 0 then -- Transactions
+        buttonTransactions:SetEnabled(false)
+        tpanel:SetHidden(false)
+    end
+    if buttonid == 1 then -- days
+        ButtonDays:SetEnabled(false)
+        dpanel:SetHidden(false)
+    end
+    if buttonid == 2 then -- Bank Day
+        ButtonBankDays:SetEnabled(false)
+        bpanel:SetHidden(false)
+        if not SGL.Temps.bank.isfirstsesstionbankupd then
+            SGL.WARNINGMESSAGE_SetBankUPDMessage()
+        end
+    end
+
+    SGL.UPDWindowEv()
 end

@@ -34,6 +34,10 @@ local localization_strings = {
     SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON = "Скрыть кнопку банка",
     SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON_TP = "Скрыть кнопку банка из окна аддона.\nПримечание: Активируйте эту опцию если не используете статистику золота по дням в банке.\nУчтите, что статистика банка по дням всё равно будет работать!",
     
+    SI_SGL_SETTINGS_OPTIONS_AUTOOPENINBANK = "Автоматически открывать окно аддона в банке", -- Автоматически открывать окно аддона в банке
+    SI_SGL_SETTINGS_OPTIONS_AUTOOPENINBANK_TP = "Автоматически открывает окно в банке на странице статистики банка по дням.", -- Автоматически открывает окно в банке на странице статистики банка по дням.
+
+
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS = "Сохранять транзакции",
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_TP = "Нестабильно! \nСохраняет лог ваших транзакций после перезагрузки.", --Сохраняет лог ваших транзакций после перезагрузки.
     SI_SGL_SETTINGS_OPTIONS_SAVETRANSACTIONS_SLIDERNAME = "Сохранить последних транзакций", --Сохранить последних транзакций

@@ -77,7 +77,7 @@
                     <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="$(parent)SessionGoldLabel" offsetX="0" offsetY="25" />
                     <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)SessionGoldLabel" offsetX="50" offsetY="30" />
                 </Label>
-                <Button name="$(parent)ButtonSwitchlist" mouseEnabled="true" inherits="ZO_DefaultButton">
+                <Button name="$(parent)ButtonSwitchlist" mouseEnabled="true" inherits="ZO_DefaultButton"> <!-- Old Buttons -->
                     <Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)DetailPanel" offsetX="0" offsetY="15" />
                     <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)DetailPanel" offsetX="15" offsetY="35" />
                     <Controls>
@@ -89,7 +89,7 @@
                         SteelswordGoldLogger.Switchlistonwindow()
                     </OnClicked>
                 </Button>
-                <Button name="$(parent)ButtonBankSwitchlist" mouseEnabled="true" inherits="ZO_DefaultButton" hidden="false">
+                <Button name="$(parent)ButtonBankSwitchlist" mouseEnabled="true" inherits="ZO_DefaultButton" hidden="false"> <!-- Old Buttons -->
                     <Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)DetailPanel" offsetX="0" offsetY="40" />
                     <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)DetailPanel" offsetX="15" offsetY="60" />
                     <Controls>
@@ -101,6 +101,53 @@
                         SteelswordGoldLogger.SwitchtoBankList()
                     </OnClicked>
                 </Button>
+
+                <!--New Buttons-->
+                <Button name="$(parent)ButtonTransactions" inherits="ZO_ButtonBehaviorClickSound">
+					<Dimensions x="42" y="42" />
+					<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)DetailPanel" offsetX="-75" offsetY="15" />
+                    
+					<Textures normal="/esoui/art/tradinghouse/tradinghouse_listings_tabicon_up.dds"
+						pressed="/esoui/art/tradinghouse/tradinghouse_listings_tabicon_down.dds"
+						mouseOver="/esoui/art/tradinghouse/tradinghouse_listings_tabicon_over.dds"
+						disabled="/esoui/art/tradinghouse/tradinghouse_listings_tabicon_down.dds"/> <!--/esoui/art/tradinghouse/tradinghouse_listings_tabicon_disabled.dds-->
+					<OnClicked>
+						SteelswordGoldLogger.GUIButtonsClick(0)
+					</OnClicked>
+                    <OnMouseExit>
+                        ZO_Tooltips_HideTextTooltip()
+                    </OnMouseExit>
+				</Button>
+                <Button name="$(parent)ButtonDays" inherits="ZO_ButtonBehaviorClickSound">
+					<Dimensions x="45" y="45" />
+					<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)DetailPanel" offsetX="-45" offsetY="15" />
+                    
+					<Textures normal="/esoui/art/market/keyboard/tabicon_daily_up.dds"
+						pressed="/esoui/art/market/keyboard/tabicon_daily_down.dds"
+						mouseOver="/esoui/art/market/keyboard/tabicon_daily_over.dds"
+						disabled="/esoui/art/market/keyboard/tabicon_daily_down.dds"/>
+					<OnClicked>
+						SteelswordGoldLogger.GUIButtonsClick(1)
+					</OnClicked>
+                    <OnMouseExit>
+                        ZO_Tooltips_HideTextTooltip()
+                    </OnMouseExit>
+				</Button>
+                <Button name="$(parent)ButtonBankDays" inherits="ZO_ButtonBehaviorClickSound">
+					<Dimensions x="42" y="42" />
+					<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$(parent)DetailPanel" offsetX="-15" offsetY="15" />
+                    
+					<Textures normal="\esoui\art\guild\guildhistory_indexicon_guildbank_up.dds"
+						pressed="\esoui\art\guild\guildhistory_indexicon_guildbank_down.dds"
+						mouseOver="\esoui\art\guild\guildhistory_indexicon_guildbank_over.dds"
+						disabled="\esoui\art\guild\guildhistory_indexicon_guildbank_down.dds"/>
+					<OnClicked>
+						SteelswordGoldLogger.GUIButtonsClick(2)
+					</OnClicked>
+                    <OnMouseExit>
+                        ZO_Tooltips_HideTextTooltip()
+                    </OnMouseExit>
+				</Button>
                 <Label name="$(parent)WarningMessage" font="$(ANTIQUE_FONT)|14|soft-shadow-thick" text="nil" hidden="true">
                     <Anchor point="BOTTOMRIGHT" relativeTo="$(parent)" relativePoint="TOPLEFT" offsetX="0" offsetY="0" />
                     <Anchor point="BOTTOMRIGHT" relativeTo="$(parent)" relativePoint="BOTTOMRIGHT" offsetX="0" offsetY="0" />

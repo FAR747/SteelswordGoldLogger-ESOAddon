@@ -42,7 +42,7 @@ function SteelswordGoldLogger.LoadSettings()
                     default = SteelswordGoldLogger.defaultVars.hidecurrectgold,
                     width = "full",	--or "half" (optional)
                     --warning = "Will need to reload the UI.",	--(optional)
-                },
+                },--[[
                 [3] = { -- Hide Bank Button
                     type = "checkbox",
                     name = GetString(SI_SGL_SETTINGS_OPTIONS_HIDEBANKBUTTON),
@@ -54,6 +54,18 @@ function SteelswordGoldLogger.LoadSettings()
                     default = SteelswordGoldLogger.defaultVars.hidebankbutton,
                     width = "full",	--or "half" (optional)
                     --warning = "Will need to reload the UI.",	--(optional)
+                },--]]
+                [3] = {
+                    type = "checkbox",
+                    name = GetString(SI_SGL_SETTINGS_OPTIONS_AUTOOPENINBANK),
+                    tooltip = GetString(SI_SGL_SETTINGS_OPTIONS_AUTOOPENINBANK_TP),
+                    getFunc = function() return SteelswordGoldLogger.savedVars.autoopeninbank end,
+                    setFunc = function(value) SteelswordGoldLogger.savedVars.autoopeninbank = value
+                    end,
+                    default = SteelswordGoldLogger.defaultVars.autoopeninbank,
+                    width = "full",	--or "half" (optional)
+                    --warning = GetString(SI_SGL_SETTINGS_WARNING_UNSTABLE),	--(optional)
+                    --disabled = function() return true end
                 },
                 [4] = {
                     type = "checkbox",
@@ -217,6 +229,18 @@ function SteelswordGoldLogger.LoadSettings()
                     width = "full",	--or "half" (optional)
                     --warning = "Will need to reload the UI.",	--(optional)
                 },
+                --[[
+                [4] = {
+                    type = "checkbox",
+                    name = GetString(SI_SGL_SETTINGS_CATEGORY_DEBUG_LEGACY_OLDBUTTONS),
+                    tooltip = GetString(SI_SGL_SETTINGS_CATEGORY_DEBUG_LEGACY_OLDBUTTONS_TP),
+                    getFunc = function() return SteelswordGoldLogger.savedVars.legacybuttons end,
+                    setFunc = function(value) SteelswordGoldLogger.savedVars.legacybuttons = value end,
+                    default = SteelswordGoldLogger.defaultVars.legacybuttons,
+                    --disabled = function() return not SteelswordGoldLogger.savedVars.debugmes end,
+                    width = "full",	--or "half" (optional)
+                    warning = GetString(SI_SGL_SETTINGS_WARNING_UNSTABLE),	--(optional)
+                },--]]
                 
             },
         },
