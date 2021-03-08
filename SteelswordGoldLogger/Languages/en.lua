@@ -97,6 +97,7 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_44 = "Skills reset",
     SI_SGL_GUPD_REASON_45 = "Characteristic Points Reset",
     SI_SGL_GUPD_REASON_47 = "Payment of the penalty", -- Оплата штрафа стражнику
+    SI_SGL_GUPD_REASON_50 = "Buying guild tabard",
     SI_SGL_GUPD_REASON_51 = "Deposited to guild bank",
     SI_SGL_GUPD_REASON_52 = "Withdrawn from guild bank",
     SI_SGL_GUPD_REASON_55 = "Skills Respec",

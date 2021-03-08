@@ -96,6 +96,7 @@ local localization_strings = {
     SI_SGL_GUPD_REASON_44 = "Сброс навыков",
     SI_SGL_GUPD_REASON_45 = "Сброс характеристик",
     SI_SGL_GUPD_REASON_47 = "Оплата штрафа стражнику", -- Оплата штрафа стражнику
+    SI_SGL_GUPD_REASON_50 = "Покупка гильдейского табарда",
     SI_SGL_GUPD_REASON_51 = "Депозит в гильдейский банк",
     SI_SGL_GUPD_REASON_52 = "Вывод из гильдейского банка",
     SI_SGL_GUPD_REASON_55 = "Преобразования навыков",
