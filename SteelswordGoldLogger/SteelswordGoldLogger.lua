@@ -1,6 +1,6 @@
 SteelswordGoldLogger = {
     name            = "SteelswordGoldLogger",           -- Matches folder and Manifest file names.
-    version         = "1.2.2",                -- A nuisance to match to the Manifest.
+    version         = "1.2.3",                -- A nuisance to match to the Manifest.
     author          = "FAR747",
     color           = "DDFFEE",             -- Used in menu titles and so on.
     menuName        = "Steelsword Gold Logger",          -- A UNIQUE identifier for menu object.
